@@ -1,0 +1,21 @@
+---
+- name: update cache
+  become: true
+  yum:
+    update_cache: true
+- name: install packages
+  become: true
+  yum:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+      - wget
+      - "@Development tools"
+      - gettext-devel
+      - curl-devel
+      - perl-CPAN
+      - perl-devel
+      - openssl-devel
+      - zlib-devel
+
