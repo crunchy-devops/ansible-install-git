@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="51.255.211.147" id="b2e057ee-ac90-4414-a2a8-9296aa75a069" keyPath="D:\project\id_rsa" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" />
+      <sshConfig host="51.68.28.210" id="78a2bffe-738a-4faa-8821-bc2b2d5f968a" keyPath="D:\project\id_rsa" port="22" nameFormat="DESCRIPTIVE" username="centos" />
+    </configs>
+  </component>
+</project>
