@@ -1,5 +1,6 @@
 ---
 - name: format disk
+  become: true
   hosts: centosvm
   tasks:
   - name: get disk structure
@@ -9,8 +10,7 @@
   - name: debug
     debug:
       msg: " device : {{ get_disk.stdout | get_device }}"
-  #- name: Format disk
-  #  filesystem:
-  #    fstype: ext4
-  #    dev: "{{ get_disk.stdout | get_device }}"
-
+  - name: Format disk
+    filesystem:
+      fstype: ext4
+      dev: "{{ get_disk.stdout | get_device }}"

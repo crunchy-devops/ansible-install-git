@@ -30,11 +30,17 @@ class FilterModule(object):
     def get_device(self, from_fdisk):
         items = []
         dev = []
-        element = from_fdisk.split(',')
-        # print(element[0])
-        if "Disk /" in element[0]:
-            items.append(element)
-        for disk in items:
-            device_info = disk[0].split()
-            dev.append(device_info[1][:-1])
-        return dev[-1]
+        f = []
+        element = from_fdisk.split('\n')
+        for disk in element:
+            if "Disk /" in disk:
+                items.append(disk)
+        for el in items:
+            device_info = el.split(':')
+            dev.append(device_info)
+        #return dev
+        for a in dev:
+            f.append(a[0])
+        for d in f:
+            c = d.split()
+        return c[1]
