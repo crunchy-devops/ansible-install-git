@@ -6,8 +6,11 @@
     become: true
     command: fdisk -l
     register: get_disk
-  - name: Format disk
-    filesystem:
-      fstype: ext4
-      dev: "{{ get_disk.stdout | list_device }}"
+  - name: debug
+    debug:
+      msg: " device : {{ get_disk.stdout | get_device }}"
+  #- name: Format disk
+  #  filesystem:
+  #    fstype: ext4
+  #    dev: "{{ get_disk.stdout | get_device }}"
 

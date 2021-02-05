@@ -8,7 +8,7 @@ class FilterModule(object):
         return {
             'a_filter': self.a_filter,
             'latest_version': self.latest_version,
-            'list_devices': self.list_devices
+            'get_device': self.get_device
         }
 
     def a_filter(self, a_variable):
@@ -27,7 +27,7 @@ class FilterModule(object):
                     break
         return list_of_version
 
-    def list_devices(self, from_fdisk):
+    def get_device(self, from_fdisk):
         items = []
         dev = []
         element = from_fdisk.split(',')
