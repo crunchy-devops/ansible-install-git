@@ -35,12 +35,14 @@ class FilterModule(object):
         for disk in element:
             if "Disk /" in disk:
                 items.append(disk)
+        #return items
         for el in items:
             device_info = el.split(':')
             dev.append(device_info)
         #return dev
         for a in dev:
             f.append(a[0])
+        #return f
         for d in f:
             c = d.split()
         return c[1]

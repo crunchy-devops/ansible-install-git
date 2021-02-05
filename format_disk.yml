@@ -14,3 +14,4 @@
     filesystem:
       fstype: ext4
       dev: "{{ get_disk.stdout | get_device }}"
+
