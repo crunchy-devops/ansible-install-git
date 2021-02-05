@@ -1,0 +1,13 @@
+---
+- name: format disk
+  hosts: centosvm
+  tasks:
+  - name: get disk structure
+    become: true
+    command: fdisk -l
+    register: get_disk
+  - name: Format disk
+    filesystem:
+      fstype: ext4
+      dev: "{{ get_disk.stdout | list_device }}"
+
